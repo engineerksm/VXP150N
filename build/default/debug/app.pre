@@ -6878,7 +6878,7 @@ uint16_t temp2=0;
 
 temp = (float)(data*10)/811;
 temp2 = (uint16_t)(temp*10);
-if(temp2>100) temp2=100;
+
 
 I2C_AS1115_Write(DIGIT3,(temp2/100)%10);
 I2C_AS1115_Write(DIGIT4,(temp2/10)%10 | 0x80);
@@ -6902,7 +6902,7 @@ I2C_AS1115_Write(DIGIT2,temp2%10);
 }else
 {
 temp2 = (uint16_t)(temp*10);
-if(temp2>150) temp2 = 150;
+
 I2C_AS1115_Write(DIGIT0,(temp2/100)%10);
 I2C_AS1115_Write(DIGIT1,(temp2/10)%10 | !0x80);
 I2C_AS1115_Write(DIGIT2,temp2%10);

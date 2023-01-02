@@ -5070,11 +5070,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app.c: 49: temp2 = (uint16_t)(temp*10);
 "49
 [e = _temp2 -> * _temp -> -> 10 `i `f `ui ]
-[; ;app.c: 50: if(temp2>100) temp2=100;
-"50
-[e $ ! > _temp2 -> -> 100 `i `ui 523  ]
-[e = _temp2 -> -> 100 `i `ui ]
-[e :U 523 ]
 [; ;app.c: 52: I2C_AS1115_Write(DIGIT3,(temp2/100)%10);
 "52
 [e ( _I2C_AS1115_Write (2 , -> . `E5385 3 `uc -> % / _temp2 -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
@@ -5111,7 +5106,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _temp / -> * _data -> -> 15 `i `ui `f -> -> 811 `i `f ]
 [; ;app.c: 65: if(temp < 10)
 "65
-[e $ ! < _temp -> -> 10 `i `f 525  ]
+[e $ ! < _temp -> -> 10 `i `f 524  ]
 [; ;app.c: 66: {
 "66
 {
@@ -5130,19 +5125,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 }
 [; ;app.c: 71: }else
-[e $U 526  ]
-[e :U 525 ]
+[e $U 525  ]
+[e :U 524 ]
 [; ;app.c: 72: {
 "72
 {
 [; ;app.c: 73: temp2 = (uint16_t)(temp*10);
 "73
 [e = _temp2 -> * _temp -> -> 10 `i `f `ui ]
-[; ;app.c: 74: if(temp2>150) temp2 = 150;
-"74
-[e $ ! > _temp2 -> -> 150 `i `ui 527  ]
-[e = _temp2 -> -> 150 `i `ui ]
-[e :U 527 ]
 [; ;app.c: 75: I2C_AS1115_Write(DIGIT0,(temp2/100)%10);
 "75
 [e ( _I2C_AS1115_Write (2 , -> . `E5385 0 `uc -> % / _temp2 -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
@@ -5154,11 +5144,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_AS1115_Write (2 , -> . `E5385 2 `uc -> % _temp2 -> -> 10 `i `ui `uc ]
 "78
 }
-[e :U 526 ]
+[e :U 525 ]
 [; ;app.c: 78: }
 [; ;app.c: 80: }
 "80
-[e :UE 524 ]
+[e :UE 523 ]
 }
 "82
 [v _adcTodac `(i ~T0 @X0 1 ef1`ui ]
@@ -5180,8 +5170,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app.c: 90: return (int)temp;
 "90
 [e ) -> _temp `i ]
-[e $UE 528  ]
+[e $UE 526  ]
 [; ;app.c: 91: }
 "91
-[e :UE 528 ]
+[e :UE 526 ]
 }
